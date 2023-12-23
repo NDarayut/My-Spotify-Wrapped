@@ -49,7 +49,7 @@ def insert_to_gsheet(track_ids):
     df = pd.DataFrame(tracks, columns = ['name', 'album', 'artist', 'spotify_url', 'album_cover'])
 
     gc = gspread.service_account(filename='spotify-wrapped-408406-9eda9ff82713.json')
-    sh = gc.open('Yut wrapped')
+    sh = gc.open(#'YOUR GOOGLE SHEET NAME')
     worksheet = sh.worksheet(f'{time_period}')
     worksheet.update([df.columns.values.tolist()] + df.values.tolist())
     print('Done')
